@@ -25,4 +25,58 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Macro
+#pragma once
 
+// C++ Standard Library
+#include <unordered_map>
+#include <memory>
+
+
+
+namespace mvclib
+{
+
+
+// Forward declarations
+template<typename StateType, typename EventType>
+class AbstractController<StateType, EventType>;
+
+
+
+template<typename StateType, typename EventType>
+class MainController
+{
+public:
+
+    // Constructors and destructors
+    MainController();
+
+    ~MainController();
+
+    // Methods
+    void handle(StateType &state, EventType &event);
+
+    // Modifiers
+    void addController(StateType state, AbstractController<StateType, EventType>* controller);
+
+    void removeController(StateType state);
+
+    void clearControllers();
+
+
+protected:
+
+    std::unordered_map<StateType, std::unique_ptr<AbstractController<StateType, EventType>>> controllers;
+
+    AbstractController<StateType, EventType>* getCurrentController(StateType state);
+
+
+private:
+
+
+
+}; // class MainController
+
+
+} // namespace mvclib

@@ -25,4 +25,41 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+#pragma once
 
+
+
+namespace mvclib
+{
+
+// Forward declarations
+class Model;
+
+
+template<typename StateType, typename EventType>
+class AbstractController
+{
+public:
+
+    // Constructors and destructors
+    AbstractController();
+
+    virtual ~AbstractController();
+
+
+    // Methods
+    virtual void handle(StateType &state, EventType &event) = 0;
+
+
+
+protected:
+
+    Model* model;
+
+
+private:
+
+};
+
+
+} // namespace mvclib
