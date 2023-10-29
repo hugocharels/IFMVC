@@ -25,4 +25,31 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+#include <IFMVC/Controller/AbstractController.hpp>
 
+
+namespace ifmvc
+{
+
+// Constructors and destructors
+template<typename StateType, typename EventType>
+AbstractController<StateType, EventType>::AbstractController(): model(nullptr)
+{
+}
+
+template<typename StateType, typename EventType>
+AbstractController<StateType, EventType>::AbstractController(Model* model): model(model)
+{
+}
+
+
+template<typename StateType, typename EventType>
+AbstractController<StateType, EventType>::~AbstractController()=default;
+
+
+// Methods
+template<typename StateType, typename EventType>
+void AbstractController::handle(StateType &state, EventType &event)=0;
+
+
+} // namespace ifmvc

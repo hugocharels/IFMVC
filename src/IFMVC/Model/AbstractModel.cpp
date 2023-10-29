@@ -25,4 +25,18 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+#include <IFMVC/Model/AbstractModel.hpp>
+
+
+namespace ifmvc
+{
+
+AbstractModel::AbstractModel()=default;
+
+
+AbstractModel::~AbstractModel()=default;
+
+
+
+} // namespace ifmvc
 

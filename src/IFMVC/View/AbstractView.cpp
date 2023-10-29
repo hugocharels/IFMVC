@@ -25,4 +25,26 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+#include <IFMVC/View/AbstractView.hpp>
+
+
+namespace ifmvc
+{
+
+// Constructors and destructors
+AbstractView::AbstractView(): model(nullptr)
+{
+}
+
+AbstractView::AbstractView(Model* model): model(model)
+{
+}
+
+
+// Methods
+void AbstractView::draw()=0;
+
+
+
+} // namespace ifmvc
 
