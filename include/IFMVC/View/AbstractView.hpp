@@ -42,6 +42,7 @@ public:
 
 	// Constructors and destructors
 	AbstractView();
+	explicit AbstractView(Model* model);
 
 	virtual ~AbstractView();
 

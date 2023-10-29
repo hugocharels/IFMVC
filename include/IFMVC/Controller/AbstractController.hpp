@@ -42,12 +42,13 @@ public:
 
 	// Constructors and destructors
 	AbstractController();
+	explicit AbstractController(Model* model);
 
 	virtual ~AbstractController();
 
 
 	// Methods
-	virtual void handle(StateType &state, EventType &event) = 0;
+	virtual void handle(StateType &state, EventType &event);
 
 
 protected:
