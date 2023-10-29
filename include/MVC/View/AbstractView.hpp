@@ -25,4 +25,39 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+#pragma once
 
+
+namespace ifmvc
+{
+
+// Forward declarations
+class Model;
+
+
+class AbstractView
+{
+
+public:
+
+	// Constructors and destructors
+	AbstractView();
+
+	virtual ~AbstractView();
+
+
+	// Methods
+	virtual void draw();
+
+
+protected:
+
+	Model* model;
+
+
+private:
+
+}; // class AbstractView
+
+
+} // namespace ifmvc

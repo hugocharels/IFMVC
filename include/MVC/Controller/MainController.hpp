@@ -25,7 +25,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-// Macro
+
 #pragma once
 
 // C++ Standard Library
@@ -33,15 +33,12 @@
 #include <memory>
 
 
-
-namespace mvclib
+namespace ifmvc
 {
-
 
 // Forward declarations
 template<typename StateType, typename EventType>
 class AbstractController<StateType, EventType>;
-
 
 
 template<typename StateType, typename EventType>
@@ -49,27 +46,30 @@ class MainController
 {
 public:
 
-    // Constructors and destructors
-    MainController();
+	// Constructors and destructors
+	MainController();
 
-    ~MainController();
+	~MainController();
 
-    // Methods
-    void handle(StateType &state, EventType &event);
+	// Methods
+	virtual void handle(StateType &state, EventType &event);
 
-    // Modifiers
-    void addController(StateType state, AbstractController<StateType, EventType>* controller);
+	// Modifiers
+	virtual void addController(StateType state, AbstractController<StateType, EventType>* controller);
 
-    void removeController(StateType state);
+	virtual void removeController(StateType state);
 
-    void clearControllers();
+	virtual void clearControllers();
 
 
 protected:
 
-    std::unordered_map<StateType, std::unique_ptr<AbstractController<StateType, EventType>>> controllers;
+	// Attributes
+	std::unordered_map<StateType, std::unique_ptr<AbstractController<StateType, EventType>>> controllers;
 
-    AbstractController<StateType, EventType>* getCurrentController(StateType state);
+
+	// Methods
+	virtual AbstractController<StateType, EventType>* getCurrentController(StateType state);
 
 
 private:
@@ -79,4 +79,4 @@ private:
 }; // class MainController
 
 
-} // namespace mvclib
+} // namespace ifmvc

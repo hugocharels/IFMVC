@@ -28,8 +28,7 @@
 #pragma once
 
 
-
-namespace mvclib
+namespace ifmvc
 {
 
 // Forward declarations
@@ -41,25 +40,23 @@ class AbstractController
 {
 public:
 
-    // Constructors and destructors
-    AbstractController();
+	// Constructors and destructors
+	AbstractController();
 
-    virtual ~AbstractController();
+	virtual ~AbstractController();
 
 
-    // Methods
-    virtual void handle(StateType &state, EventType &event) = 0;
-
+	// Methods
+	virtual void handle(StateType &state, EventType &event) = 0;
 
 
 protected:
 
-    Model* model;
+	Model* model;
 
 
 private:
 
-};
+}; // class AbstractController
 
-
-} // namespace mvclib
+} // namespace ifmvc

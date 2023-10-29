@@ -26,3 +26,56 @@
 
 
 
+#pragma once
+
+// C++ Standard Library
+#include <unordered_map>
+#include <memory>
+
+
+namespace ifmvc
+{
+
+// Forward declarations
+class AbstractView<StateType, EventType>;
+
+
+template<typename StateType>
+class MainView
+{
+public:
+
+	// Constructors and destructors
+	MainView();
+
+	virtual ~MainView();
+
+	// Methods
+	virtual void draw(StateType &state);
+
+	// Modifiers
+	virtual void addView(std::shared_ptr<AbstractView<StateType, EventType>> view);
+
+	virtual void removeView(StateType state);
+
+	virtual void clearViews();
+
+
+protected:
+
+	// Attributes
+	std::unordered_map<StateType, std::shared_ptr<AbstractView<StateType, EventType>>> views;
+
+
+	// Methods
+	virtual AbstractView<StateType, EventType>* getCurrentView(StateType state);
+
+
+private:
+
+
+
+
+};
+
+} // namespace ifmvc

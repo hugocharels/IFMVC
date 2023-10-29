@@ -25,4 +25,33 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+#pragma once
+
+
+namespace ifmvc
+{
+
+class AbstractModel
+{
+public:
+
+	// Constructors and destructors
+	AbstractModel();
+
+	virtual ~AbstractModel();
+
+	// Methods
+
+
+protected:
+
+	// Attributes
+
+
+private:
+
+
+};
+
+}
 
