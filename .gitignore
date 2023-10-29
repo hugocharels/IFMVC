@@ -1,3 +1,15 @@
+
+
+.idea/
+cmake-build-debug/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+*.cmake
+
+
+
 # Prerequisites
 *.d
 
